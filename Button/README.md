@@ -2,6 +2,8 @@
 
 A button with several options for quick and easy-to-use style customizations.
 
+![picture alt](https://i.imgur.com/ea7UoIO.jpg)
+
 #### Usage Example ####
 
 ```javascript
