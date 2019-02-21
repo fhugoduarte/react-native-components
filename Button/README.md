@@ -37,98 +37,112 @@ export default example = () => (
 ## Props ##
 
 #### `disabled` ####
-Essa propriedade define se o botão pode ser clicado e dá um estilo intuituvo ao mesmo.
+
+This property defines whether the button can be clicked and gives an intuitive style to it.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `full` ####
-Se essa propriedade for definida como `true` o botão terá a largura igual a largura do dispositivo.
+
+If this property is set to true, the button will have the width equal to the width of the device.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `rounded` ####
-O botão ficará com a borda um pouco mais arrendondada.
+
+The button will have the border slightly more rounded.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `bordered` ####
-O botão ficará com o `backgroundColor = 'transparent'` e o texto e borda terão a cor principal do botão.
+
+The button will have `backgroundColor = 'transparent'` and the text and border will have the main color of the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `transparent` ####
-O botão ficará com o `backgroundColor = 'transparent'` e o texto terá a cor principal do botão.
+
+The button will have `backgroundColor = 'transparent'` and the text will have the button's main color.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `light` ####
-O título do botão ficará com o titulo com linhas mais finas.
+
+The title of the button will have the title with finer lines.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `textStyle` ####
-Estilo que será aplicado no titulo do botão. (Esse estilo irá sobrepor qualquer outro estilo padrão do titulo)
+
+Style that will be applied in the title of the button. (This style will override any other standard title style)
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 style  | No
 
 #### `title` ####
-Texto que será adicionado como titulo do botão.
+
+Text that will be added as the title of the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 string  | No
 
 #### `info` ####
-Um estilo já customizado para o botão.
+
+An already customized style for the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `primary` ####
-Um estilo já customizado para o botão.
+
+An already customized style for the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `success` ####
-Um estilo já customizado para o botão.
+
+An already customized style for the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `warning` ####
-Um estilo já customizado para o botão.
+
+An already customized style for the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `danger` ####
-Um estilo já customizado para o botão.
+
+An already customized style for the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
 
 #### `dark` ####
-Um estilo já customizado para o botão.
+
+An already customized style for the button.
 
 *TYPE*  | *REQUIRED*
 ------------- | -------------
