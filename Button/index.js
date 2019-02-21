@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, TouchableOpacity, ViewPropTypes } from 'react-native';
-import { Text } from 'native-base';
-import PropTypes from 'prop-types';
+import { TouchableOpacity, Text } from 'react-native';
+import * as colors from './colors';
 
 import styles from './styles';
 
@@ -9,74 +8,81 @@ const button = (props) => {
   const {
     disabled,
     onPress,
-    block,
     full,
     rounded,
     bordered,
     transparent,
-    invertBaseColors,
     style,
     children,
     light,
     textStyle,
-    title,
+    title = '',
+    info,
+    primary,
+    success,
+    warning,
+    danger,
+    dark,
+    ...rest
   } = props;
+
+  let customTextStyle = { color: colors.white };
+
+  const getMainColor = () => {
+    if (disabled) return colors.disabled;
+    if (info) return colors.info;
+    if (primary) return colors.primary;
+    if (success) return colors.success;
+    if (warning) return colors.warning;
+    if (danger) return colors.danger;
+    if (dark) return colors.dark;
+    return colors.primary;
+  };
+
+  const getCustomStyle = () => {
+    const mainColor = getMainColor();
+    let customStyle = { ...styles.base, backgroundColor: mainColor };
+
+    if (full) customStyle = { ...customStyle, ...styles.full };
+    if (rounded) customStyle = { ...customStyle, ...styles.rounded };
+    if (bordered) {
+      customTextStyle = { color: mainColor };
+      customStyle = {
+        ...customStyle,
+        ...styles.bordered,
+        borderColor: mainColor,
+      };
+    }
+    if (transparent) {
+      customTextStyle = { color: mainColor };
+      customStyle = { backgroundColor: colors.transparent };
+    }
+    return customStyle;
+  };
 
   return (
     <TouchableOpacity
       disabled={disabled}
       onPress={onPress}
-      style={[
-        styles.base,
-        block && styles.block,
-        full && styles.full,
-        rounded && styles.rounded,
-        bordered && styles.bordered,
-        disabled && (bordered ? styles.borderedDisable : styles.disabled),
-        transparent && styles.transparent,
-        invertBaseColors && styles.invertBaseColor,
-        style,
-      ]}
+      style={[getCustomStyle(), style]}
+      {...rest}
     >
-      <Choose>
-        <When condition={children}>
-          <View>{children}</View>
-        </When>
-        <Otherwise>
-          <Text
-            allowFontScaling={false}
-            style={[
-              styles.baseText,
-              (bordered || transparent) && styles.coloredText,
-              disabled &&
-                ((bordered || transparent) && styles.borderedTextDisable),
-              light && styles.light,
-              invertBaseColors && styles.invertBaseTextColor,
-              textStyle,
-            ]}
-          >
-            {title}
-          </Text>
-        </Otherwise>
-      </Choose>
+      {children ? (
+        children
+      ) : (
+        <Text
+          style={[
+            styles.baseText,
+            customTextStyle,
+            light && styles.light,
+            textStyle,
+          ]}
+        >
+          {title}
+        </Text>
+      )}
     </TouchableOpacity>
   );
-};
-
-button.propTypes = {
-  textStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
-  onPress: PropTypes.func,
-  title: PropTypes.string,
-  light: PropTypes.bool,
-  block: PropTypes.bool,
-  full: PropTypes.bool,
-  rounded: PropTypes.bool,
-  bordered: PropTypes.bool,
-  disabled: PropTypes.bool,
-  transparent: PropTypes.bool,
-  invertBaseColors: PropTypes.bool,
-  style: ViewPropTypes.style,
-  children: PropTypes.node,
 };
 
 export default button;

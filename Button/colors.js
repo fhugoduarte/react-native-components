@@ -1,0 +1,9 @@
+export const disabled = '#B0B4B0';
+export const info = '#64d5f1';
+export const primary = '#2e31e8';
+export const success = '#0E9E12';
+export const warning = '#FF7E1F';
+export const danger = '#F41313';
+export const dark = '#000';
+export const white = '#FFF';
+export const transparent = 'transparent';
