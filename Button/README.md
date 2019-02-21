@@ -22,7 +22,7 @@ export default example = () => (
   * [bordered](#bordered)
   * [transparent](#transparent)
   * [light](#light)
-  * [textStyle](#textStyle)
+  * [textStyle](#textstyle)
   * [title](#title)
   * [info](#info)
   * [primary](#primary)
@@ -133,3 +133,5 @@ Um estilo já customizado para o botão.
 *TYPE*  | *REQUIRED*
 ------------- | -------------
 bool  | No
+
+
